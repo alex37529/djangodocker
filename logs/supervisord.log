@@ -1,0 +1,92 @@
+2018-11-14 14:40:11,262 INFO Included extra file "/djangodocker/djangod.conf" during parsing
+2018-11-14 14:40:11,262 INFO Set uid to user 0 succeeded
+2018-11-14 14:41:26,443 INFO Included extra file "/djangodocker/djangod.conf" during parsing
+2018-11-14 14:41:26,443 INFO Set uid to user 0 succeeded
+2018-11-14 14:41:26,449 INFO RPC interface 'supervisor' initialized
+2018-11-14 14:41:26,449 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2018-11-14 14:41:26,449 INFO supervisord started with pid 1
+2018-11-14 14:41:27,450 INFO spawnerr: can't find command 'python'
+2018-11-14 14:41:27,451 INFO spawnerr: can't find command 'python'
+2018-11-14 14:41:28,453 INFO spawnerr: can't find command 'python'
+2018-11-14 14:41:28,454 INFO spawnerr: can't find command 'python'
+2018-11-14 14:41:30,457 INFO spawnerr: can't find command 'python'
+2018-11-14 14:41:30,458 INFO spawnerr: can't find command 'python'
+2018-11-14 14:41:33,462 INFO spawnerr: can't find command 'python'
+2018-11-14 14:41:33,462 INFO gave up: djangoproject entered FATAL state, too many start retries too quickly
+2018-11-14 14:41:33,462 INFO spawnerr: can't find command 'python'
+2018-11-14 14:41:33,462 INFO gave up: django_project entered FATAL state, too many start retries too quickly
+2018-11-14 14:42:19,519 WARN received SIGTERM indicating exit request
+2018-11-14 14:42:55,218 INFO Included extra file "/djangodocker/djangod.conf" during parsing
+2018-11-14 14:42:55,218 INFO Set uid to user 0 succeeded
+2018-11-14 14:42:55,228 INFO RPC interface 'supervisor' initialized
+2018-11-14 14:42:55,228 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2018-11-14 14:42:55,228 INFO supervisord started with pid 1
+2018-11-14 14:42:56,232 INFO spawned: 'djangoproject' with pid 20
+2018-11-14 14:42:56,234 INFO spawnerr: can't find command 'python'
+2018-11-14 14:42:57,236 INFO success: djangoproject entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-11-14 14:42:57,236 INFO spawnerr: can't find command 'python'
+2018-11-14 14:42:59,241 INFO spawnerr: can't find command 'python'
+2018-11-14 14:43:02,245 INFO spawnerr: can't find command 'python'
+2018-11-14 14:43:02,246 INFO gave up: django_project entered FATAL state, too many start retries too quickly
+2018-11-14 14:43:37,288 WARN received SIGTERM indicating exit request
+2018-11-14 14:43:37,288 INFO waiting for djangoproject to die
+2018-11-14 14:43:38,290 DEBG killing djangoproject (pid 20) with signal SIGTERM
+2018-11-14 14:43:39,292 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 139639140664992 for <Subprocess at 139639149612168 with name djangoproject in state STOPPING> (stdout)>
+2018-11-14 14:43:39,292 DEBG fd 9 closed, stopped monitoring <POutputDispatcher at 139639140665216 for <Subprocess at 139639149612168 with name djangoproject in state STOPPING> (stderr)>
+2018-11-14 14:43:39,293 INFO stopped: djangoproject (terminated by SIGTERM)
+2018-11-14 14:43:39,293 DEBG received SIGCHLD indicating a child quit
+2018-11-14 14:44:09,896 INFO Included extra file "/djangodocker/djangod.conf" during parsing
+2018-11-14 14:44:09,896 INFO Set uid to user 0 succeeded
+2018-11-14 14:44:09,902 INFO RPC interface 'supervisor' initialized
+2018-11-14 14:44:09,902 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2018-11-14 14:44:09,902 INFO supervisord started with pid 1
+2018-11-14 14:44:10,906 INFO spawned: 'djangoproject' with pid 22
+2018-11-14 14:44:10,910 INFO spawned: 'django_project' with pid 23
+2018-11-14 14:44:11,913 INFO success: djangoproject entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-11-14 14:44:11,913 INFO success: django_project entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-11-14 14:46:04,048 WARN received SIGTERM indicating exit request
+2018-11-14 14:46:04,048 DEBG killing django_project (pid 23) process group with signal SIGTERM
+2018-11-14 14:46:04,049 INFO waiting for djangoproject, django_project to die
+2018-11-14 14:46:04,054 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 140505186838008 for <Subprocess at 140505195869632 with name django_project in state STOPPING> (stdout)>
+2018-11-14 14:46:04,054 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 140505186878296 for <Subprocess at 140505195869632 with name django_project in state STOPPING> (stderr)>
+2018-11-14 14:46:04,055 INFO stopped: django_project (terminated by SIGTERM)
+2018-11-14 14:46:04,055 INFO reaped unknown pid 27
+2018-11-14 14:46:04,055 DEBG received SIGCHLD indicating a child quit
+2018-11-14 14:46:04,056 DEBG killing djangoproject (pid 22) with signal SIGTERM
+2018-11-14 14:46:05,058 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 140505186837896 for <Subprocess at 140505195785240 with name djangoproject in state STOPPING> (stdout)>
+2018-11-14 14:46:05,058 DEBG fd 9 closed, stopped monitoring <POutputDispatcher at 140505186838120 for <Subprocess at 140505195785240 with name djangoproject in state STOPPING> (stderr)>
+2018-11-14 14:46:05,058 INFO stopped: djangoproject (terminated by SIGTERM)
+2018-11-14 14:46:05,058 DEBG received SIGCHLD indicating a child quit
+2018-11-14 14:46:40,005 INFO Included extra file "/djangodocker/djangod.conf" during parsing
+2018-11-14 14:46:40,005 INFO Set uid to user 0 succeeded
+2018-11-14 14:46:40,010 INFO RPC interface 'supervisor' initialized
+2018-11-14 14:46:40,010 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2018-11-14 14:46:40,011 INFO supervisord started with pid 1
+2018-11-14 14:46:41,015 INFO spawned: 'djangoproject' with pid 22
+2018-11-14 14:46:41,019 INFO spawned: 'django_project' with pid 23
+2018-11-14 14:46:42,021 INFO success: djangoproject entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-11-14 14:46:42,021 INFO success: django_project entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-11-14 14:54:02,556 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 139932000024112 for <Subprocess at 139932008971344 with name djangoproject in state RUNNING> (stdout)>
+2018-11-14 14:54:02,557 DEBG fd 9 closed, stopped monitoring <POutputDispatcher at 139932000024392 for <Subprocess at 139932008971344 with name djangoproject in state RUNNING> (stderr)>
+2018-11-14 14:54:02,557 INFO exited: djangoproject (terminated by SIGKILL; not expected)
+2018-11-14 14:54:02,557 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 139932000024280 for <Subprocess at 139932009055736 with name django_project in state RUNNING> (stdout)>
+2018-11-14 14:54:02,557 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139932000060416 for <Subprocess at 139932009055736 with name django_project in state RUNNING> (stderr)>
+2018-11-14 14:54:02,558 INFO exited: django_project (terminated by SIGKILL; not expected)
+2018-11-14 14:54:02,558 DEBG received SIGCHLD indicating a child quit
+2018-11-14 14:54:02,561 INFO spawned: 'djangoproject' with pid 60
+2018-11-14 14:54:02,565 INFO spawned: 'django_project' with pid 61
+2018-11-14 14:54:03,567 INFO success: djangoproject entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-11-14 14:54:03,567 INFO success: django_project entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-11-14 14:55:13,655 WARN received SIGTERM indicating exit request
+2018-11-14 14:55:13,655 DEBG killing django_project (pid 61) process group with signal SIGTERM
+2018-11-14 14:55:13,656 INFO waiting for djangoproject, django_project to die
+2018-11-14 14:55:13,662 DEBG fd 10 closed, stopped monitoring <POutputDispatcher at 139932000098344 for <Subprocess at 139932009055736 with name django_project in state STOPPING> (stdout)>
+2018-11-14 14:55:13,662 DEBG fd 14 closed, stopped monitoring <POutputDispatcher at 139932000024336 for <Subprocess at 139932009055736 with name django_project in state STOPPING> (stderr)>
+2018-11-14 14:55:13,662 INFO stopped: django_project (terminated by SIGTERM)
+2018-11-14 14:55:13,662 INFO reaped unknown pid 64
+2018-11-14 14:55:13,663 DEBG received SIGCHLD indicating a child quit
+2018-11-14 14:55:13,663 DEBG killing djangoproject (pid 60) with signal SIGTERM
+2018-11-14 14:55:14,664 DEBG fd 7 closed, stopped monitoring <POutputDispatcher at 139932000060920 for <Subprocess at 139932008971344 with name djangoproject in state STOPPING> (stdout)>
+2018-11-14 14:55:14,664 DEBG fd 9 closed, stopped monitoring <POutputDispatcher at 139932000026016 for <Subprocess at 139932008971344 with name djangoproject in state STOPPING> (stderr)>
+2018-11-14 14:55:14,664 INFO stopped: djangoproject (terminated by SIGTERM)
+2018-11-14 14:55:14,664 DEBG received SIGCHLD indicating a child quit
