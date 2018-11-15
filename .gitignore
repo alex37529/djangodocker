@@ -1,2 +1,5 @@
 .idea
-dockerfiles/pgdata/
+dockerfiles/pgdata
+*.pid
+*.pyc
+*.pyo
