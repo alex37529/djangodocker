@@ -1,0 +1,2 @@
+# djangodocker
+djangodocker project template
