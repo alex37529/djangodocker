@@ -6,7 +6,7 @@ docker-compose run --rm --service-ports postgresql
 
 docker logs --tail 50 --follow --timestamps djangodocker_project_1
 
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
 
 ssh root@localhost -p 2225
  

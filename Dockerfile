@@ -3,8 +3,14 @@ FROM ubuntu:18.04
 RUN apt-get update && apt-get install -y openssh-server \
 && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false -o APT::AutoRemove::SuggestsImportant=false $buildDeps
 
-RUN apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv libcurl4-openssl-dev libssl-dev libmysqlclient-dev locales git
+RUN apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv libcurl4-openssl-dev libssl-dev libmysqlclient-dev locales git vim
 
+RUN mkdir /var/run/sshd
+RUN echo 'root:111111' | chpasswd
+RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+RUN echo "export VISIBLE=now" >> /etc/profile
+RUN echo "PermitRootLogin yes" > /etc/ssh/sshd_config
 COPY ./djangodocker/requirements.txt ./requirements.txt
 
 RUN pip3 install -r requirements.txt
