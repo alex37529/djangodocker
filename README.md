@@ -20,5 +20,6 @@
  
 `docker-compose run --rm --no-deps djangodocker_project_1 python3 manage.py makemigrations`
 
+**Easily integrated with PyCharm IDE. Do not waste your time. Take ready!**
 
 ![DjangoDocker]( djangodocker.jpg "Django Docker")
