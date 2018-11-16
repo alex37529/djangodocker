@@ -1,18 +1,12 @@
 version: '2.1'
 services:
 
-  postgresql:
-    image: postgres:9.6-alpine
-    env_file: .env
-    volumes:
-      - /var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-
   project:
-    build: ./
+    build:
+      context: ./
     env_file: .env
     working_dir: /djangodocker
+    restart: "always"
     depends_on:
      - postgresql
     command: bash -c "sleep 3 && /etc/init.d/ssh start && python3 /djangodocker/manage.py runserver 0.0.0.0:8000"
@@ -29,3 +23,12 @@ services:
     ports:
       - "2225:22"
       - "8005:8000"
+
+  postgresql:
+    image: postgres:9.6-alpine
+    env_file: .env
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
