@@ -19,3 +19,6 @@
 `ssh root@localhost -p 2225`
  
 `docker-compose run --rm --no-deps djangodocker_project_1 python3 manage.py makemigrations`
+
+
+![Process Hierarchy]( djangodocker.jpg "Django Docker")
