@@ -6,6 +6,7 @@ ENV PYTHON_VERSION=3.6 \
     PATH=$HOME/.local/bin/:$PATH \
     PYTHONUNBUFFERED=1 \
     PYTHONIOENCODING=UTF-8 \
+    PYTHONPATH=$PYTHONPATH:/app/ \
     LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8 \
     PIP_NO_CACHE_DIR=off
@@ -28,19 +29,20 @@ COPY ./djangodocker/requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
 RUN pip3 install git+https://github.com/Supervisor/supervisor
 
-RUN mkdir -p /djangodocker
+RUN mkdir -p /app
 
-COPY djangodocker /djangodocker/
+COPY ./djangodocker /app/djangodocker
+#ADD ./djangodocker /app
+COPY ./supervisord.conf /app/
+COPY ./djangod.conf /app/
+COPY ./manage.py /app/
+COPY ./djangodocker/daemons /app/daemons
+COPY ./djangodocker/logs /app/logs
 
-COPY ./supervisord.conf /djangodocker/
-COPY ./djangod.conf /djangodocker/
-COPY ./manage.py /djangodocker/
-COPY ./djangodocker/daemons /djangodocker/daemons
-COPY ./djangodocker/logs /djangodocker/logs
-
-RUN touch /djangodocker/logs/supervisord.log
-RUN touch /djangodocker/daemons/supervisord.pid
-WORKDIR /djangodocker
+RUN touch /app/djangodocker/__init__.py
+RUN touch /app/logs/supervisord.log
+RUN touch /app/daemons/supervisord.pid
+WORKDIR /app
 
 #RUN mkdir /opt/project/
 #RUN mkdir /opt/project/logs

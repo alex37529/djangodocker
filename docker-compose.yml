@@ -5,19 +5,21 @@ services:
     build:
       context: ./
     env_file: .env
-    working_dir: /djangodocker
+    working_dir: /app
     restart: "always"
     depends_on:
      - postgresql
-    command: bash -c "sleep 3 && /etc/init.d/ssh start && python3 /djangodocker/manage.py runserver 0.0.0.0:8000"
+    command: bash -c "sleep 3 && /etc/init.d/ssh start && python3 /app/manage.py runserver 0.0.0.0:8000"
     # supervisord -c /djangodocker/supervisord.conf -n"
     volumes:
-      - /work/djangodocker:/djangodocker
+      #- /work/djangodocker:/djangodocker
+      - ./.env:/app/.env
+      - ./djangodocker:/app/djangodocker
       - ./dockerfiles/sshdconf/sshd_config:/etc/ssh/sshd_config
       - ./dockerfiles/id_rsa.pub:/root/.ssh/authorized_keys
-      - /home/alex/.PyCharm2018.1/:/root/.pycharm_helpers/
-      - ./dockerfiles/logs/supervisord.conf:/djangodocker/logs/supervisord.conf
-      - ./djangod.conf:/djangodocker/djangod.conf
+      #- /home/alex/.PyCharm2018.1/:/root/.pycharm_helpers/
+      - ./dockerfiles/logs/supervisord.conf:/app/logs/supervisord.conf
+      - ./djangod.conf:/app/djangod.conf
     links:
       - postgresql
     ports:
@@ -32,3 +34,13 @@ services:
     ports:
       - "5432:5432"
 
+  nginx:
+    build:
+      context: ./nginx
+    restart: "always"
+    depends_on:
+      - project
+    volumes:
+      - ./nginx/nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8002:80"
