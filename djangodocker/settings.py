@@ -26,7 +26,9 @@ SECRET_KEY = '5^tnf45@ndytwj)s7hgan%-_r&hxj5*f^^%k&2=&kbs&pcym2n'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
 
 # Application definition
 
@@ -38,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.postgres',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'djangodocker',
 ]
 

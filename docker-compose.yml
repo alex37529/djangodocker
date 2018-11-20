@@ -9,17 +9,21 @@ services:
     restart: "always"
     depends_on:
      - postgresql
-    command: bash -c "sleep 3 && /etc/init.d/ssh start && python3 /app/manage.py runserver 0.0.0.0:8000"
+    # command: bash -c "sleep 3 && /etc/init.d/ssh start && python3 /app/manage.py runserver 0.0.0.0:8000"
+    command: bash -c "sleep 3 && /etc/init.d/ssh start && uwsgi --http 0.0.0.0:8000 --module djangodocker.wsgi"
+    # uwsgi --http 0.0.0.0:8000 --module djangodocker.wsgi"
     # supervisord -c /djangodocker/supervisord.conf -n"
     volumes:
       #- /work/djangodocker:/djangodocker
-      - ./.env:/app/.env
+      #- ./.env:/app/.env
       - ./djangodocker:/app/djangodocker
-      - ./dockerfiles/sshdconf/sshd_config:/etc/ssh/sshd_config
-      - ./dockerfiles/id_rsa.pub:/root/.ssh/authorized_keys
+      #- ./dockerfiles/sshdconf/sshd_config:/etc/ssh/sshd_config
+      #- ./dockerfiles/id_rsa.pub:/root/.ssh/authorized_keys
       #- /home/alex/.PyCharm2018.1/:/root/.pycharm_helpers/
-      - ./dockerfiles/logs/supervisord.conf:/app/logs/supervisord.conf
-      - ./djangod.conf:/app/djangod.conf
+      #- ./dockerfiles/logs/supervisord.conf:/app/logs/supervisord.conf
+      #- ./djangod.conf:/app/djangod.conf
+      - ./logs:/app/logs
+
     links:
       - postgresql
     ports:
@@ -42,5 +46,6 @@ services:
       - project
     volumes:
       - ./nginx/nginx.dev.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/logs:/app/logs
     ports:
-      - "8002:80"
+      - "8007:8007"
