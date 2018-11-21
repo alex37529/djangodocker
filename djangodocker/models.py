@@ -7,6 +7,6 @@ class Config(models.Model):
     def __str__(self):
         return f'{self.pk} {self.key}'
 
-    class Meta:
-        managed = False
-        db_table = 'application_config'
+    #class Meta:
+    #    managed = False
+    #    db_table = 'application_config'

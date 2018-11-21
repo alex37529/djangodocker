@@ -10,7 +10,8 @@ services:
     depends_on:
      - postgresql
     # command: bash -c "sleep 3 && /etc/init.d/ssh start && python3 /app/manage.py runserver 0.0.0.0:8000"
-    command: bash -c "sleep 3 && /etc/init.d/ssh start && uwsgi --http 0.0.0.0:8000 --module djangodocker.wsgi"
+    # command: bash -c "sleep 3 && /etc/init.d/ssh start && uwsgi --http 0.0.0.0:8000 --module djangodocker.wsgi"
+    command: bash -c "sleep 3 && /etc/init.d/ssh start && gunicorn -b 0.0.0.0:8000 --reload -w 1 --log-file - --log-level info --capture-output --max-requests 1000 --timeout 30 djangodocker.wsgi"
     # uwsgi --http 0.0.0.0:8000 --module djangodocker.wsgi"
     # supervisord -c /djangodocker/supervisord.conf -n"
     volumes:
