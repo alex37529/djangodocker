@@ -10,3 +10,7 @@ class Config(models.Model):
     #class Meta:
     #    managed = False
     #    db_table = 'application_config'
+
+class Comment(models.Model):
+    id = models.AutoField(primary_key=True, db_column='if', help_text='primary key')
+    comment = models.TextField('comment', blank=False, help_text='Enter you comment')
