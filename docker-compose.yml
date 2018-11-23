@@ -23,6 +23,7 @@ services:
       #- /home/alex/.PyCharm2018.1/:/root/.pycharm_helpers/
       #- ./dockerfiles/logs/supervisord.conf:/app/logs/supervisord.conf
       #- ./djangod.conf:/app/djangod.conf
+      - ./templates:/app/templates
       - ./logs:/app/logs
 
     links:

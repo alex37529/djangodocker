@@ -34,6 +34,7 @@ RUN mkdir -p /app
 COPY ./djangodocker /app/djangodocker
 #ADD ./djangodocker /app
 COPY ./supervisord.conf /app/
+COPY ./templates /app/
 COPY ./djangod.conf /app/
 COPY ./manage.py /app/
 COPY ./djangodocker/daemons /app/daemons

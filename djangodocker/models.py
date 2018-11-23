@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Config(models.Model):
     key = models.CharField(primary_key=True, max_length=100)
@@ -14,3 +16,7 @@ class Config(models.Model):
 class Comment(models.Model):
     id = models.AutoField(primary_key=True, db_column='if', help_text='primary key')
     comment = models.TextField('comment', blank=False, help_text='Enter you comment')
+    borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+
+    class Meta:
+        permissions = (("can_mark_returned", "Set book as returned"),)
