@@ -18,5 +18,8 @@ class Comment(models.Model):
     comment = models.TextField('comment', blank=False, help_text='Enter you comment')
     borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
+    def __str__(self):
+        return f'{self.pk} {self.borrower}'
+
     class Meta:
-        permissions = (("can_mark_returned", "Set book as returned"),)
+        permissions = (("testgroupz", "Test group permission"),)

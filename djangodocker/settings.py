@@ -32,7 +32,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 # e-mails to console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+app_label = 'myapp'
 
 # Application definition
 

@@ -2,11 +2,24 @@
 
 
 {% block content %}
-{% if comments %}
-    {% for comment in comments %}
-        {{ comment.id }} {{ comment.comment }} {{ comment.borrower }} <hr>
-     {% endfor %}
+    {{ perms.myapp }}
+    {{ perms.djangodocker }}
+    {{ user.is_authenticated }}
+    {% if comments %}
+        <hr>
+        {% for comment in comments %}
+            {{ comment.id }} {{ comment.comment }}{{ comment.borrower }}
+            <hr>
+        {% endfor %}
     {% else %}
-    No Comments
-{% endif %}
+        No Comments
+    {% endif %}
+    {% if perms.djangodocker.testgroupz %}
+        <h1>000</h1>
+    {% else %}
+        <h1>{{ perms }}</h1>
+        {{ perms.djangodocker.testgroupz }}
+    {% endif %}
+
+
 {% endblock %}
